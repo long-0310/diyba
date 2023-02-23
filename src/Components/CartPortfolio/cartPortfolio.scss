@@ -1,0 +1,241 @@
+@import "../../styles/variable";
+@import "../../styles/mixin";
+
+.cartPort {
+  width: 100%;
+  height: 151px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  margin-bottom: 16px;
+  position: relative;
+
+  .top-perf {
+    top: 16px;
+    left: 16px;
+    position: absolute;
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #7492ff;
+    text-transform: uppercase;
+  }
+  .img-cartPort {
+    width: 30%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .port-content {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 16px;
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      .heading-port {
+        font-weight: 600;
+        width: 80%;
+      }
+    }
+    &-money {
+      font-weight: 600;
+      font-size: 14px;
+      color: #f58e6a;
+      margin: 8px 0;
+    }
+    &-desc {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      .dest-info {
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 4px;
+          font-weight: 500;
+        }
+      }
+    }
+    .content-owner {
+      font-size: 12px;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  .port-label {
+    width: 22%;
+    padding: 16px 12px;
+    background-color: #fff3ef;
+    &-inside {
+      margin-bottom: 8px;
+      .label-heading {
+        display: flex;
+        font-size: 12px;
+        font-weight: 400;
+        align-items: center;
+        margin-bottom: 4px;
+        svg {
+          margin-right: 4px;
+        }
+      }
+      .label-title {
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .cartPort {
+    .top-perf {
+      top: 8px;
+      left: 8px;
+      font-size: 8px;
+    }
+    .port-content {
+      padding: 8px;
+      &-money {
+        font-size: 10px;
+        margin: 4px 0;
+      }
+      &-desc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      &-title {
+        .heading-port {
+          font-size: 14px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+  .cartPort {
+    display: flex;
+    box-sizing: border-box;
+    padding: 8px 0;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid $border-color;
+    margin-bottom: 0;
+    flex-direction: column;
+    height: 430px;
+    position: relative;
+
+    .top-perf {
+      left: unset;
+      top: 16px;
+      right: 8px;
+      width: 116px;
+      text-align: center;
+      position: absolute;
+      display: inline-block;
+      color: white;
+      font-size: 12px;
+    }
+    .img-cartPort {
+      width: 100%;
+      height: 240px;
+      img {
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .port-content {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 16px 0;
+      &-title {
+        .heading-port {
+          font-size: 16px;
+        }
+      }
+      &-money {
+        font-size: 14px;
+        margin: 8px 0;
+      }
+      &-desc {
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        .dest-info {
+          span {
+            margin-left: 4px;
+            font-weight: 500;
+          }
+        }
+      }
+      .content-owner {
+        font-size: 14px;
+      }
+    }
+    .port-label {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px 12px;
+      justify-content: space-around;
+      background-color: #fff3ef;
+      border-radius: 4px;
+
+      &-inside {
+        width: 120px;
+        margin-bottom: 8px;
+        .label-heading {
+          display: flex;
+          font-size: 12px;
+          font-weight: 400;
+          align-items: center;
+          margin-bottom: 4px;
+          svg {
+            margin-right: 4px;
+          }
+        }
+        .label-title {
+          display: inline-block;
+          font-family: "Manrope", sans-serif;
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 576px) {
+  .cartPort {
+    .img-cartPort {
+      width: 100%;
+      height: 174px;
+    }
+  }
+}
+@media all and (max-width: 379px) {
+}

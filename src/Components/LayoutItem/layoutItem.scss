@@ -1,0 +1,79 @@
+@import "../../styles/variable";
+@import "../../styles/mixin";
+
+.layout {
+  padding: 24px;
+  border-radius: 14px;
+  background-color: white;
+  margin-bottom: 24px;
+  box-shadow: 0px 2px 4px rgba(225, 228, 233, 0.7);
+  &-top {
+    @include flex;
+    margin-bottom: 25px;
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.notificationMobile {
+  display: none;
+}
+@media all and (max-width: 1200px) {
+  .layout {
+    padding: 20px;
+  }
+}
+@media all and (max-width: 1024px) {
+  .notificationMobile {
+    display: block;
+    .notification {
+      position: relative;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid $border-color;
+      .arrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-right: 16px;
+        transform: translateY(-50%);
+      }
+      &-time {
+        font-weight: 500;
+        font-size: 14px;
+        color: #969696;
+        margin-bottom: 2px;
+      }
+      &-content {
+        font-weight: 400;
+        line-height: 24px;
+        font-size: 14px;
+        -webkit-line-clamp: 3; /* số dòng hiển thị */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        display: -webkit-box;
+      }
+    }
+  }
+  .notificationDesktop {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  .layout {
+    padding: 24px;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    background-color: white;
+    border-radius: 0px;
+    margin-bottom: 24px;
+    box-shadow: 0px 2px 4px rgba(225, 228, 233, 0.7);
+  }
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 379px) {
+}

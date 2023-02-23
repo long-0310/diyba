@@ -1,0 +1,96 @@
+@import "../../styles/variable";
+
+.sidebar {
+  position: fixed;
+  width: 256px;
+  height: 100vh !important;
+  box-sizing: border-box;
+  background-color: #fdfaf9;
+  height: auto;
+  font-weight: 500;
+  transition: ease-in-out;
+  border-right: 1px solid $border-color;
+  img {
+    margin-top: 29px;
+    margin-left: 34px;
+    margin-bottom: 29px;
+  }
+  .sidebar-nav {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 15px;
+    .sidebar-list {
+      color: $content2;
+      display: flex;
+      padding: 12px 15px;
+      box-sizing: border-box;
+      align-items: center;
+      margin: 4px 0;
+      border-radius: 6px;
+      width: 100%;
+      transition: all 0.1s linear;
+      line-height: 24px;
+      &:hover {
+        background-color: rgba(245, 144, 107, 0.8);
+        color: white;
+        svg {
+          stroke: white;
+        }
+      }
+      svg {
+        stroke: $content3;
+        margin-right: 12px;
+      }
+    }
+    .active > svg {
+      stroke: white;
+    }
+    .active > .active-block {
+      left: 0;
+      position: absolute;
+      width: 5px;
+      height: 29px;
+      background-color: $main-color;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: $border-color;
+      margin: 20px 0;
+    }
+  }
+}
+
+.hide-menu {
+  width: 84px;
+
+  img {
+    margin: 18px 22px;
+  }
+  .sidebar-nav {
+    width: auto;
+    .sidebar-list svg {
+      margin-right: 0;
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+}
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media all and (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media all and (max-width: 379px) {
+}

@@ -1,0 +1,273 @@
+@import "../../styles/variable";
+@import "../../styles/mixin";
+
+.wish-list {
+  .btn-lists {
+    display: flex;
+    gap: 12px;
+    .active {
+      background: #f58e6a;
+      color: white;
+      margin-bottom: 24px;
+      svg {
+        stroke: white;
+      }
+    }
+    &-top {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 24px;
+      gap: 10px;
+      color: white;
+      width: 202px;
+      height: 40px;
+      border: none;
+      color: #585757;
+      border-radius: 8px;
+      svg {
+        stroke: #969696;
+      }
+    }
+  }
+  .wish-list-card {
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    .card-img {
+      width: 34%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .card-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      box-sizing: border-box;
+      width: 66%;
+      .card-content-top {
+        display: flex;
+        gap: 14px;
+
+        .heading-wishlist {
+          width: 100%;
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+      .offer-title {
+        font-weight: 600;
+        font-size: 14px;
+        color: #f58e6a;
+        margin: 8px 0;
+      }
+      .wishlist-desc {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 8px;
+        .wishlist-info {
+          display: flex;
+          align-items: center;
+        }
+        svg {
+          margin-right: 8px;
+        }
+      }
+      .card-content-bottom {
+        padding: 12px;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        .bottom-top {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 5px;
+        }
+        .view-content {
+          display: flex;
+          border-radius: 4px;
+          justify-content: space-between;
+          align-items: center;
+          padding: 4px 8px;
+          background-color: #fff3ef;
+        }
+        .range {
+          .insideRange {
+            display: flex;
+            justify-content: space-between;
+          }
+          &-left {
+            display: flex;
+            gap: 16px;
+            .range-content {
+              .range-desc {
+                font-size: 10px;
+                line-height: 12px;
+                color: $main-color;
+                margin-bottom: 2px;
+              }
+              .range-offer {
+                font-weight: 600;
+                font-size: 14px;
+                color: $content2;
+              }
+            }
+          }
+
+          &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px 16px;
+            height: 21px;
+            border-radius: 4px;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            align-self: flex-end;
+          }
+          .mid {
+            background-color: #c3c706;
+          }
+          .high {
+            background-color: $green;
+          }
+          .low {
+            background-color: $danger;
+          }
+        }
+      }
+    }
+  }
+  .wishlist-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      color: #f7a488;
+      border-color: #f7a488;
+      svg {
+        stroke: #f7a488;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .wish-list {
+    .wish-list-card {
+      .card-content {
+        .wishlist-desc {
+          font-size: 12px;
+        }
+      }
+      .card-content {
+        .card-content-bottom {
+          .range {
+            &-btn {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+  .wish-list {
+    .wish-list-card {
+      border-radius: 0px;
+      border: none;
+      border-top: 1px solid $border-color;
+      flex-direction: column;
+      padding: 8px 0;
+      height: auto;
+      margin-bottom: 0px;
+      box-sizing: border-box;
+      .card-img {
+        width: 100%;
+        height: 231px;
+        img {
+          border-radius: 4px;
+        }
+      }
+      .card-content {
+        padding: 16px 0;
+        display: block;
+        flex-direction: column;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        width: 100%;
+
+        .card-content-bottom {
+          position: relative;
+          .bottom-top {
+            margin-bottom: 16px;
+          }
+          .range {
+            .insideRange {
+              display: block;
+            }
+            &-left {
+              display: flex;
+              justify-content: space-around;
+              gap: 16px;
+              .range-content {
+                .range-desc {
+                  font-size: 12px;
+                  line-height: 12px;
+                  color: $main-color;
+                  margin-bottom: 2px;
+                }
+                .range-offer {
+                  font-weight: 600;
+                  font-size: 14px;
+                  color: $content2;
+                }
+              }
+            }
+
+            &-btn {
+              position: absolute;
+              top: 10px;
+              right: 16px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 2px 16px;
+              height: 21px;
+              border-radius: 4px;
+              color: white;
+              font-weight: 600;
+              font-size: 12px;
+              align-self: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 379px) {
+}
