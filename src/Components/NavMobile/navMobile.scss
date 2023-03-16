@@ -1,0 +1,133 @@
+@import "../../styles/variable";
+@import "../../styles/mixin";
+
+@import "../../styles/variable";
+@import "../../styles/mixin";
+
+.nav-mobile {
+  top: 0;
+  left: 0;
+  width: 60vw;
+  padding: 16px;
+  background-color: white;
+  position: absolute;
+  z-index: 999;
+  &-top {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    .close-mobile-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      svg {
+        width: 24px;
+        stroke: none;
+      }
+    }
+  }
+  &-bottom {
+    width: 50vw;
+    .sidebar-list {
+      color: $content2;
+      display: flex;
+      padding: 12px 15px;
+      box-sizing: border-box;
+      align-items: center;
+      margin: 4px 0;
+      border-radius: 6px;
+      width: 100%;
+      transition: all 0.1s linear;
+      line-height: 24px;
+      &:hover {
+        background-color: rgba(245, 144, 107, 0.8);
+        color: white;
+        svg {
+          stroke: white;
+        }
+      }
+      svg {
+        stroke: $content3;
+        margin-right: 12px;
+      }
+    }
+    .active > svg {
+      stroke: white;
+    }
+    .active > .active-block {
+      left: 0;
+      position: absolute;
+      width: 5px;
+      height: 29px;
+      background-color: $main-color;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: $border-color;
+      margin: 20px 0;
+    }
+    .sidebar-list {
+      color: $content2;
+      display: flex;
+      padding: 12px 15px;
+      box-sizing: border-box;
+      align-items: center;
+      margin: 4px 0;
+      border-radius: 6px;
+      width: 100%;
+      transition: all 0.1s linear;
+      line-height: 24px;
+      &:hover {
+        background-color: rgba(245, 144, 107, 0.8);
+        color: white;
+        svg {
+          stroke: white;
+        }
+      }
+      svg {
+        stroke: $content3;
+        margin-right: 12px;
+      }
+    }
+    .active > svg {
+      stroke: white;
+    }
+    .active > .active-block {
+      left: 0;
+      position: absolute;
+      width: 5px;
+      height: 29px;
+      background-color: $main-color;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: $border-color;
+      margin: 20px 0;
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .nav-mobile {
+    display: none;
+  }
+}
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+  }
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 379px) {
+}

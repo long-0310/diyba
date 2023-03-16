@@ -26,7 +26,6 @@ import "./dashboard.scss";
 export default function DashBoard() {
   const { hide, toggleHide } = useContext(AppContext);
 
-  console.log(hide);
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 1200 && hide === false) {

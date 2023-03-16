@@ -3,9 +3,11 @@ import { HiddenIcon, MobileNav, UserIcon } from "../../img/icons";
 import "./navbar.scss";
 import logo from "../../img/logo.png";
 import { AppContext } from "../../Context/AppContext";
+import NavMobile from "../../Components/NavMobile/NavMobile";
 
 function Navbar() {
   const { hide, toggleHide } = useContext(AppContext);
+  const { open, setIsOpen } = useContext(AppContext);
 
   const toggleHideMenu = () => {
     toggleHide();
@@ -14,7 +16,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-inside">
-        <div className="mobileNav">
+        <div onClick={setIsOpen} className="mobileNav">
           <MobileNav />
         </div>
         <div onClick={toggleHideMenu} className="navbar-inside-left">
@@ -34,6 +36,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {open ? <NavMobile /> : <></>}
     </div>
   );
 }

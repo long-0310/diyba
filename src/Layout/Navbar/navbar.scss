@@ -12,6 +12,7 @@
     height: 100%;
     @include flex;
     .mobileNav {
+      cursor: pointer;
       display: none;
     }
     .mobileNav {
