@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import DefaultPage from "./Layout/DefaultPage/DefaultPage";
 import Account from "./pages/Account/Account";
 import Contact from "./pages/Contact/Contact";
@@ -20,6 +20,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<DefaultPage />}>
+            <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="dashboard" element={<DashBoard />} />
             <Route path="portfolio" element={<MyPortfolio />} />
             <Route path="pending" element={<Pending />} />
