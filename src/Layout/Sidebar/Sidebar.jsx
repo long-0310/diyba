@@ -73,7 +73,10 @@ export default function Sidebar() {
   ];
 
   return (
-    <nav className={`sidebar ${hide ? "hide-menu" : ""}`}>
+    <nav
+      className={`sidebar ${hide ? "hide-menu" : ""}`}
+      style={{ height: "100vh" }}
+    >
       {hide ? (
         <div>
           <img src={logoMobile} width="36px" alt="Diyba" />
