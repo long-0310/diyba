@@ -8,10 +8,13 @@
   top: 0;
   left: 0;
   width: 60vw;
+  bottom: 0;
+  height: 100vh;
   padding: 16px;
   background-color: white;
   position: absolute;
   z-index: 999;
+  animation: 1s ease-in-out;
   &-top {
     text-align: center;
     justify-content: center;

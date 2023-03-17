@@ -10,10 +10,14 @@
   font-weight: 500;
   transition: ease-in-out;
   border-right: 1px solid $border-color;
+
   img {
     margin-top: 29px;
     margin-left: 34px;
     margin-bottom: 29px;
+  }
+  .mobileLogo {
+    display: none;
   }
   .sidebar-nav {
     display: inline-block;
@@ -31,6 +35,9 @@
       width: 100%;
       transition: all 0.1s linear;
       line-height: 24px;
+      .mobile-nav-content {
+        display: none;
+      }
       &:hover {
         background-color: rgba(245, 144, 107, 0.8);
         color: white;
@@ -83,13 +90,58 @@
 @media all and (max-width: 1024px) {
 }
 @media all and (max-width: 768px) {
-  .sidebar {
+  .sidebar-mobile {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    animation: 1s ease-in-out;
+    .mobileLogo {
+      display: block;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      margin: 20px 0px;
+      // padding: 0 16px;
+      .img-mobile {
+        margin: 0;
+      }
+      .close-mobile-btn {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 16px;
+        svg {
+          width: 24px;
+          stroke: none;
+        }
+      }
+    }
+    .mobileHide {
+      display: none;
+    }
+    .sidebar-nav {
+      .sidebar-list {
+        .mobile-nav-content {
+          display: block;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  .hideMobile {
     display: none;
   }
 }
 @media all and (max-width: 576px) {
-  .sidebar {
-    display: none;
+  .sidebar-mobile {
+    width: 75vw;
   }
 }
 @media all and (max-width: 379px) {

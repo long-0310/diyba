@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./sidebar.scss";
 import { AppContext } from "../../Context/AppContext";
 import logo from "../../img/logo.png";
-import logoMobile from "../../img/logomobile.png";
+import logoIcon from "../../img/logomobile.png";
 import {
   AccountIcon,
   ContactIcon,
   DashboardIcon,
+  IconClosed,
   LogoutIcon,
   NotiIcon,
   PendingIcon,
@@ -72,18 +73,33 @@ export default function Sidebar() {
     },
   ];
 
+  const { open, setIsOpen } = useContext(AppContext);
+
+  const setHideMenu = () => {
+    setIsOpen();
+  };
+
   return (
     <nav
-      className={`sidebar ${hide ? "hide-menu" : ""}`}
+      className={`sidebar ${hide ? "hide-menu" : ""} sidebar-mobile ${
+        open ? "" : "hideMobile"
+      }`}
       style={{ height: "100vh" }}
     >
       {hide ? (
-        <div>
-          <img src={logoMobile} width="36px" alt="Diyba" />
+        <div className="mobileHide">
+          <img src={logoIcon} width="36px" alt="Diyba" />
         </div>
       ) : (
-        <img src={logo} alt="Diyba" width="141px" />
+        <img src={logo} className="mobileHide" alt="Diyba" width="141px" />
       )}
+
+      <div className="mobileLogo">
+        <img className="img-mobile" src={logo} width="88px" alt="Diyba" />
+        <div onClick={setHideMenu} className="close-mobile-btn">
+          <IconClosed />
+        </div>
+      </div>
 
       <div className="sidebar-nav">
         {links.map((link, idx) => {
@@ -98,6 +114,7 @@ export default function Sidebar() {
               >
                 <div className="active-block"></div>
                 {link.icon}
+                <span className="mobile-nav-content">{link.name}</span>
                 {hide ? "" : link.name}
               </NavLink>
             </div>

@@ -36,7 +36,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      {open ? <NavMobile /> : <></>}
+      {/* {open ? <NavMobile /> : <></>} */}
     </div>
   );
 }
